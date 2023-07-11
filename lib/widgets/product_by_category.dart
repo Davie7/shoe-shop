@@ -174,8 +174,8 @@ class _ProductByCategoryState extends State<ProductByCategory>
                     style: appStyle(20, Colors.black, FontWeight.bold),
                   ),
                   Gap(20.h),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       CategoryButton(
                         label: "Men",
                         buttonClr: Colors.black,
@@ -198,8 +198,8 @@ class _ProductByCategoryState extends State<ProductByCategory>
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       CategoryButton(
                         label: "Shoes",
                         buttonClr: Colors.black,
@@ -250,18 +250,18 @@ class _ProductByCategoryState extends State<ProductByCategory>
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: ListView.builder(
                           itemCount: brand.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(8),
                               child: Container(
                                 decoration: BoxDecoration(
                                     color: Colors.grey.shade200,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(12))),
+                                        const BorderRadius.all(Radius.circular(12))),
                                 child: Image.asset(
                                   brand[index],
                                   height: 60,
@@ -287,7 +287,7 @@ class SliderWidget extends StatelessWidget {
   final double value;
   final ValueChanged<double> onChanged;
 
-  SliderWidget({
+  const SliderWidget({super.key, 
     required this.value,
     required this.onChanged,
   });

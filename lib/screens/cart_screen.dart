@@ -1,7 +1,7 @@
 import 'package:online_shop/utils/export.dart';
 
 class CartScreen extends StatefulWidget {
-  CartScreen({super.key});
+  const CartScreen({super.key});
 
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -12,11 +12,10 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     var cartProvider = Provider.of<CartProvider>(context);
     cartProvider.getCart();
-
     return Scaffold(
-      backgroundColor: Color(0xFFE2E2E2),
+      backgroundColor: const Color(0xFFE2E2E2),
       body: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Stack(
           children: [
             Column(
@@ -27,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(AntDesign.close, color: Colors.black),
+                  child: const Icon(AntDesign.close, color: Colors.black),
                 ),
                 Text(
                   "My Cart",
@@ -42,9 +41,9 @@ class _CartScreenState extends State<CartScreen> {
                       final data = cartProvider.cart[index];
                       // print(data);
                       return Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(
+                          borderRadius: const BorderRadius.all(
                             Radius.circular(12),
                           ),
                           child: Container(
@@ -57,7 +56,7 @@ class _CartScreenState extends State<CartScreen> {
                                     color: Colors.grey.shade500,
                                     spreadRadius: 5,
                                     blurRadius: 0.3,
-                                    offset: Offset(0, 1)),
+                                    offset: const Offset(0, 1)),
                               ],
                             ),
                             child: Row(
@@ -92,7 +91,7 @@ class _CartScreenState extends State<CartScreen> {
                                         child: Container(
                                           width: 40,
                                           height: 30,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Colors.black,
                                             borderRadius: BorderRadius.only(
                                               topRight: Radius.circular(12),
@@ -107,7 +106,7 @@ class _CartScreenState extends State<CartScreen> {
                                     ),
                                     Padding(
                                       padding:
-                                          EdgeInsets.only(top: 12, left: 20),
+                                          const EdgeInsets.only(top: 12, left: 20),
                                       child: Column(
                                         // mainAxisAlignment:
                                         //     MainAxisAlignment.start,
@@ -172,9 +171,9 @@ class _CartScreenState extends State<CartScreen> {
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Colors.white,
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(16),
@@ -188,7 +187,7 @@ class _CartScreenState extends State<CartScreen> {
                                               onTap: () {
                                                 //cartProvider.increment
                                               },
-                                              child: Icon(AntDesign.minussquare,
+                                              child: const Icon(AntDesign.minussquare,
                                                   size: 20, color: Colors.grey),
                                             ),
                                             Text(
@@ -200,7 +199,7 @@ class _CartScreenState extends State<CartScreen> {
                                               onTap: () {
                                                 //cartProvider.increment
                                               },
-                                              child: Icon(AntDesign.plussquare,
+                                              child: const Icon(AntDesign.plussquare,
                                                   size: 20,
                                                   color: Colors.black),
                                             ),

@@ -19,14 +19,14 @@ class _SearchScreenState extends State<SearchScreen> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
                 onChanged: (value) {
                   setState(() {
                     _searchText = value;
                   });
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Search',
                   prefixIcon: Icon(Ionicons.search),
                 ),

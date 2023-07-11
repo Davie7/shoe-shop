@@ -36,16 +36,16 @@ var favoritesNotifier =
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: ListView.builder(
                 itemCount: favoritesNotifier.fav.length,
-                padding: EdgeInsets.only(top: 100),
+                padding: const EdgeInsets.only(top: 100),
                 itemBuilder: (BuildContext context, int index) {
                   final shoe = favoritesNotifier.fav[index];
                   return Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(12),
                       ),
                       child: Container(
@@ -68,7 +68,7 @@ var favoritesNotifier =
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(12),
+                                  padding: const EdgeInsets.all(12),
                                   child: CachedNetworkImage(
                                     imageUrl: shoe['imageUrl'],
                                     width: 70,
@@ -77,7 +77,7 @@ var favoritesNotifier =
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(
+                                  padding: const EdgeInsets.only(
                                     top: 12,
                                     left: 20,
                                   ),
@@ -126,7 +126,7 @@ var favoritesNotifier =
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(8),
                               child: GestureDetector(
                                 onTap: () {
                                   favoritesNotifier.deleteFav(shoe['key']);

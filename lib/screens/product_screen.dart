@@ -63,16 +63,16 @@ class _ProductScreenState extends State<ProductScreen> {
                       snap: false,
                       floating: true,
                       backgroundColor: Colors.transparent,
-                      expandedHeight: MediaQuery.of(context).size.height,
+                      expandedHeight: MediaQuery.sizeOf(context).height,
                       flexibleSpace: FlexibleSpaceBar(
                         background: Stack(
                           children: [
                             SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.5,
-                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.sizeOf(context).height * 0.5,
+                              width: MediaQuery.sizeOf(context).width,
                               child: PageView.builder(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: sneaker.imageUrl.length,
+                                itemCount: sneaker!.imageUrl.length,
                                 controller: pageController,
                                 onPageChanged: (page) {
                                   productNotifier.activePage = page;
@@ -82,10 +82,10 @@ class _ProductScreenState extends State<ProductScreen> {
                                     children: [
                                       Container(
                                         height:
-                                            MediaQuery.of(context).size.height *
+                                            MediaQuery.sizeOf(context).height *
                                                 0.39,
                                         width:
-                                            MediaQuery.of(context).size.width,
+                                            MediaQuery.sizeOf(context).width,
                                         color: Colors.grey.shade300,
                                         child: CachedNetworkImage(
                                             imageUrl: sneaker.imageUrl[index],
@@ -93,7 +93,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                       ),
                                       Positioned(
                                         top:
-                                            MediaQuery.of(context).size.height *
+                                            MediaQuery.sizeOf(context).height *
                                                 0.1,
                                         right: 20,
                                         child: Consumer<FavoritesNotifier>(
@@ -108,7 +108,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          Favorites(),
+                                                          const Favorites(),
                                                     ),
                                                   );
                                                 } else {
@@ -138,7 +138,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                         right: 0,
                                         left: 0,
                                         height:
-                                            MediaQuery.of(context).size.height *
+                                            MediaQuery.sizeOf(context).height *
                                                 0.3,
                                         child: Row(
                                           mainAxisAlignment:
@@ -146,7 +146,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                           children: List<Widget>.generate(
                                             sneaker.imageUrl.length,
                                             (index) => Padding(
-                                              padding: EdgeInsets.symmetric(
+                                              padding: const EdgeInsets.symmetric(
                                                 horizontal: 4,
                                               ),
                                               child: CircleAvatar(
@@ -169,14 +169,14 @@ class _ProductScreenState extends State<ProductScreen> {
                             Positioned(
                               bottom: 15,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(30),
                                   topRight: Radius.circular(30),
                                 ),
                                 child: Container(
-                                  height: MediaQuery.of(context).size.height *
+                                  height: MediaQuery.sizeOf(context).height *
                                       0.645,
-                                  width: MediaQuery.of(context).size.width,
+                                  width: MediaQuery.sizeOf(context).width,
                                   color: Colors.white,
                                   child: Padding(
                                     padding: const EdgeInsets.all(12.0),
@@ -209,9 +209,9 @@ class _ProductScreenState extends State<ProductScreen> {
                                               allowHalfRating: true,
                                               itemCount: 5,
                                               itemSize: 22,
-                                              itemPadding: EdgeInsets.symmetric(
+                                              itemPadding: const EdgeInsets.symmetric(
                                                   horizontal: 1),
-                                              itemBuilder: (context, _) => Icon(
+                                              itemBuilder: (context, _) => const Icon(
                                                 Icons.star,
                                                 size: 18,
                                                 color: Colors.black,
@@ -311,7 +311,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(60),
-                                                        side: BorderSide(
+                                                        side: const BorderSide(
                                                             color: Colors.black,
                                                             width: 1,
                                                             style: BorderStyle
@@ -366,12 +366,12 @@ class _ProductScreenState extends State<ProductScreen> {
                                             color: Colors.black),
                                         const Gap(5),
                                         SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
+                                          width: MediaQuery.sizeOf(context)
                                                   .width *
                                               0.7,
-                                          child: ReusableText(
-                                            text:sneaker.title,
+                                          child: Text(
+                                            sneaker.title,
+                                            maxLines: 2,
                                             style: appStyle(20, Colors.black,
                                                 FontWeight.w700),
                                           ),
@@ -380,7 +380,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                         Text(
                                           sneaker.description,
                                           textAlign: TextAlign.justify,
-                                          maxLines: 4,
+                                          maxLines: 5,
                                           style: appStyle(12, Colors.black,
                                               FontWeight.normal),
                                         ),
@@ -403,7 +403,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                   "qty": 1
                                                 });
                                                 productNotifier.sizes.clear();
-                                                Navigator.of(context).pop();
+                                                // Navigator.of(context).pop();
                                                 Navigator.push(
                                                   context,
                                                   MaterialPageRoute(

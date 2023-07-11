@@ -3,11 +3,11 @@ class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   List<Widget> pageList = [
-    HomeScreen(),
-    SearchScreen(),
-    Favorites(),
+    const HomeScreen(),
+    const SearchScreen(),
+    const Favorites(),
     CartScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override

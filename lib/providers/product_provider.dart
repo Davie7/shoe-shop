@@ -38,9 +38,9 @@ class ProductNotifier extends ChangeNotifier {
   }
 
   void getShoes(String category, String id) {
-    if (category == "Men's running") {
+    if (category == "Men's Running") {
       sneaker = Helper().getMaleSneakerById(id);
-    } else if (category == "Women's running") {
+    } else if (category == "Women's Running") {
       sneaker = Helper().getFemaleSneakerById(id);
     } else {
       sneaker = Helper().getKidsSneakerById(id);
